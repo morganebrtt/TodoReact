@@ -2,16 +2,12 @@ import React from 'react';
 import {Route, Switch, BrowserRouter as Router} from 'react-router-dom';
 import Home from './components/home';
 
-class App extends React.Component {
-    render() {
-        return (
-            <Router>
-                <Switch>
-                    <Route exact path="/" component={Home} />
-                </Switch>
-            </Router>
-        );
-    }
-}
+function App() {
+    return (
+        <>
+            <Home />
+        </>
+    )
+} 
 
 export default App;
