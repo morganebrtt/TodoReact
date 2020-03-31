@@ -1,10 +1,14 @@
 import React from 'react';
-import { withRouter} from 'react-router-dom';
+import Title from './Title';
+import List from './List';
 
 const Home = () => {
     return (
-        <h1>To do List</h1>
-    )
-}
+        <>
+        <Title name="To Do List" />
+        <List />
+        </>
+    );
+};
 
-export default withRouter(Home);
+export default Home;

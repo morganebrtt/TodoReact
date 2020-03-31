@@ -1,37 +1,44 @@
-import React from 'react';
+import React, {useState} from 'react';
+import Todo from './Todo';
+import InputForm from './InputForm';
 
-const List = () => {}
+const List = () => {
+    const [toDos, setToDos] = useState([
+        { id : 1 , name : "revoir React"},
+        { id: 2, name: "continuer à apprendre les hooks"}
+    ]);
 
-    // constructor(props) {
-    //     super(props);
+    const handleDelete = (id) => {
+        const updatedTodos = [...toDos];
+        const index = updatedTodos.findIndex(todo => todo.id === id);
 
-    //     this.state = {
-    //         inputValue: "",
-    //         tasks: []
-    //     };
+        updatedTodos.splice(index, 1);
 
-    //     // vos bind etc...
-    //     this.toggleChange = this.toggleChange.bind(this);
-    // }
+        setToDos(updatedTodos);
+    };
 
-    // toggleChange(event) {
-        
-    // }
+    const handleAdd = (todo) => {
+        const updatedTodos = [...toDos];
+        updatedTodos.push(todo);
+  
+        setToDos(updatedTodos);
+    };
 
-    // render() {
-    //     return (
-    //         <div>
-    //             <input type="text" value={this.state.inputValue} onChange={this.toggleChange}/>
-    //             <button type="button" onClick={this.addTask}>Add task</button>
-    //             {
-    //                 this.state.tasks.map((task, index) => {
-    //                     return (
-    //                         <p>{task}</p>
-    //                     )
-    //                 })
-    //             }
-    //         </div>
-    //     );
-    // }
+    return(
+        <div>
+            <ul>
+                {toDos.map(todo => (
+                    <Todo 
+                    key = {todo.id}
+                    details = {todo}
+                    onDelete = {handleDelete}
+                    />
+                ))}
+                
+            </ul>
+            <InputForm onToDoAdd={handleAdd}/>
+        </div>
+    );
+}
 
 export default List;
