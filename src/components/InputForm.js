@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const InputForm = ({onToDoAdd}) => {
+const InputForm = ({handleAdd}) => {
     const [newToDo, setNewToDo] = useState("");
 
     const handleChange = event => {
@@ -13,7 +13,7 @@ const InputForm = ({onToDoAdd}) => {
         const id = new Date().getTime();
         const name = newToDo;
 
-        onToDoAdd({id, name});
+        handleAdd({id, name});
 
         setNewToDo ("");
     };

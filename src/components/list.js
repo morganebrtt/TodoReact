@@ -29,14 +29,14 @@ const List = () => {
             <ul>
                 {toDos.map(todo => (
                     <Todo 
-                    key = {todo.id}
-                    details = {todo}
-                    onDelete = {handleDelete}
+                    key={todo.id}
+                    contentToDo={todo}
+                    handleDelete={handleDelete}
                     />
                 ))}
                 
             </ul>
-            <InputForm onToDoAdd={handleAdd}/>
+            <InputForm handleAdd={handleAdd}/>
         </div>
     );
 }

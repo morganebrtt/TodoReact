@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Todo = ({ details, onDelete }) => (
+const Todo = ({ contentToDo, handleDelete }) => (
     <li>
-      {details.name} <button onClick={() => onDelete(details.id)}>X</button>
+      {contentToDo.name} <button onClick={() => handleDelete(contentToDo.id)}>X</button>
     </li>
   );
   
