@@ -1,10 +1,10 @@
-import React from 'react';
+import React from "react";
 
-const Todo = ({ details, onDelete }) => (
-    <li>
-      {details.name} <button onClick={() => onDelete(details.id)}>X</button>
-    </li>
-  );
-  
-  export default Todo;
-  
+const Todo = ({ contentToDo, handleDelete }) => (
+  <li>
+    {contentToDo.name}{" "}
+    <button onClick={() => handleDelete(contentToDo.id)}>X</button>
+  </li>
+);
+
+export default Todo;
